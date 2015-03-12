@@ -18,7 +18,7 @@ and arranging awesome combos is rewarded.
 The plot is goofy.
 All the animals you're facing have their own beliefs about who built the game, and why.
 You get to hear their humurous descriptions/beliefs throughout the game.
-E.G. [[https://www.youtube.com/watch?v%3D5az0W4Y1nuU][The lion king: where are stars from]]
+E.G. [[https://www.youtube.com/watch?v=QZDk1cbKp7s][The lion king: where are stars from]]
 
 * Target Platform
 ** Node.js serving webgl
