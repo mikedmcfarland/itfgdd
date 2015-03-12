@@ -22,9 +22,8 @@ Since this idea is pretty much ripped from warios woods here are some examples.
 [[./images/aqualea.png]]
 
 The characters in the scene actually animated a few frames from time to time.
-It Was a subtle effect.
-Here's [[http://www.spriters-resource.com/resources/sheets/2/2087.gif][aqu]]alea-spritesheet which made it.
-
+It's a subtle effect.
+Here's [[http://www.spriters-resource.com/resources/sheets/2/2087.gif][aqualea-spritesheet]] which made it.
 
 * TODO Stages
 
