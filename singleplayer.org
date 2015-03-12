@@ -1,0 +1,34 @@
+* Single Player
+Go Head to head versus a bunch of computer controlled opponents.
+Each opponent comes from a different animal faction.
+You'll approach them in order, one by one.
+Each one increasing in difficulty.
+
+Before each battle there will be a screen showing the opponent, as well as some one sided dialogue,
+which is pretty much trash talk and some reveal as to their belief about the origin of the game.
+
+Since this idea is pretty much ripped from warios woods here are some examples.
+#+CAPTION: lizardon
+#+NAME: lizardon
+[[./images/lizardon.png]]
+[[http://randomhoohaas.flyingomelette.com/shr/wwoods/lizardon.html][i love lizardon]] is a nice writeup about lizadon/warios woods
+
+#+CAPTION: first-enemy
+#+NAME: first-enemy
+[[./images/first-enemy.png]]
+
+#+CAPTION: aqualea
+#+NAME: aqualea
+[[./images/aqualea.png]]
+
+The characters in the scene actually animated a few frames from time to time.
+It Was a subtle effect.
+Here's [[http://www.spriters-resource.com/resources/sheets/2/2087.gif][aqu]]alea-spritesheet which made it.
+
+
+* TODO Stages
+
+* TODO AI
+
+To help make increasing difficulty more managable, it may be worth giving the different characters special abilities.
+At higher levels they could be more powerful, or earned more quickly.

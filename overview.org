@@ -1,0 +1,30 @@
+* Introduction
+Every year a diverse group of animals come together to play /the game/.
+The board has a mind of its own, and enforces the rules.
+On your turn you move your pulsing gems, and they react with others around them.
+
+What's powering this board?
+Is it governed by the laws of science?
+Is it the will of gods?
+Perhaps it's all just a government conspirarcy?
+Depends which animals you ask, but one things for certain:
+When you win the game, It Rains Fish!
+
+It Rains Fish is a turn based puzzle strategy game.
+Players each control a field of colorful pieces, and battle each other by arranging patterns in the colors.
+These patterns control how the units will act in battle (defend, attack, or transform),
+and arranging awesome combos is rewarded.
+
+The plot is goofy.
+All the animals you're facing have their own beliefs about who built the game, and why.
+You get to hear their humurous descriptions/beliefs throughout the game.
+E.G. [[https://www.youtube.com/watch?v%3D5az0W4Y1nuU][The lion king: where are stars from]]
+
+* Target Platform
+** Node.js serving webgl
+Online and in tin in the browser
+** Standalone Executable
+Embedded browser and node js server, so steam greenlight is an option.
+* TODO Visual Style
+How to mix geometry wars and awesome illustrated characters? *Rose Help!!*
+* TODO Audio Style

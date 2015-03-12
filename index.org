@@ -1,0 +1,6 @@
+#+TITLE: It Rains Fish Game Design Document
+
+   + [[file:overview.org][overview]]
+   + [[file:singleplayer.org][singleplayer]]
+   + [[file:gameplay.org][gameplay]]
+   + [[file:ui.org][ui]]

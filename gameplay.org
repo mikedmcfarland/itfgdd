@@ -1,0 +1,201 @@
+* Gameplay Introduction
+Each player controls one half of a board, which contains pieces of varying color.
+They move their own pieces around attempting to match patterns.
+Particular patterns cause pieces to change, or to change formation.
+Attack formations cause pieces to attack the other side of the board.
+Pieces which succesfully attack all the way through the enemy board deal damage to the player.
+The first player to lose all health loses the game.
+
+* Turns
+Each player alternates taking a turn. The turn procedes as follows.
+1. The units ready to attack initiate their attack (attack phase).
+2. The player can act until they are out of moves.
+3. Counters are decremented and the turn ends.
+
+* Board
+The board is a grid that is 10x8.
+Pieces can take up different amounts of rectangular spaces within the grid.
+Pieces cannot overlap.
+** Settling
+The board will move pieces on its own for the following reasons
+- There is empty space below a piece where it can fit.
+  If so it will move the piece down to fill the empty space.
+- A piece is denser then pieces below it, and will fit below them.
+  If so it will move to the place below it may fit.
+  However it will not move through a denser piece to do so.
+* Pieces
+Pieces are of varying rectangular shapes (1x1,1x2,2x2).
+All pieces are one of three distinct colors.
+** Basic
+size: 1x1
+These are the basic pieces used to create new pieces, and create patterns for formation changes.
+They can also be put into defensive formation.
+
+** Shape
+size: 1x1
+These are special pieces that are needed to create new pieces.
+When placed adjacent to same colored pieces, they can potentially merge all pieces into one, or cause a special defensive bonus.
+
+*** TODO They must be visually indicated to player :art:
+Must be able to easily tell this is a merge piece of a specific color.
+
+** Tall
+size: 2x1
+Can only be put into attack formation.
+
+** Big
+size: 2v2
+Can only be put into attack formation.
+
+** TODO [#A] Make army data files.                                     :dev:
+*** Separate module for army data
+- Will contain yml files with stats and attributes of units.
+- Preferably a structure which will allow for multiple army types.
+* Mechanics
+The mechanics are mostly around arranging pieces in a way that triggers pattern matching, or formation changes.
+These actions affect the stats and actions of the pieces,
+which causes them to attack or defend against an opponent.
+** Patterns
+*** Shape patterns
+The patterns that trigger a shape pattern are rectangles that involve a shape piece.
+For example, if 's' represents a shape piece, and 'b' represents a basic piece of the same color,
+then the pattern below involving three basic pieces and one shape piece becomes one 2x2 piece.
+#+begin_example
+s b
+b b
+#+end_example
+
+The shape piece can be at any position in the patterns.
+**** Merge
+When one of the merge shape patterns is realized, all individual pieces merge into one.
+The stats are merged, and a bonus to power is given.
+Examples:
+#+begin_example
+s b
+b b
+
+s
+b
+#+end_example
+***** TODO add merge shape pattern matcher/handler :dev:
+***** TODO Define bonus
+- Should use current stats of pieces
+- Should be effected additionally for the number of units involved in the merge.
+**** Defensive (Nx1)
+When a defensive shape pattern is realized, a transient shield is created in place of the units.
+This shield is temporary, highly protective, and has a high density (greater then units in defense formation).
+#+begin_example
+  s b
+
+  b s b
+
+  b b s b
+
+  b b s b b
+#+end_example
+*****  TODO add defensive shape pattern matcher/handler :dev:
+***  Formation Patterns
+When a piece goes into formation, it is excluded from other pattern matches. I.E.
+Once a piece is in attack formation, or defense formation;
+it can no longer trigger formation, or shape patterns.
+
+**** Defense formation
+When 3 or more basic units of the same color are in a row, they all go into defense formation.
+#+begin_example
+b b b
+
+b b b b
+
+b b b b b
+#+end_example
+
+Units in defense formation have additional health and are denser then basic pieces and pieces in attack formation.
+***** TODO determine good way to handle stacking for defensive units
+- Should defensive units lose color?
+- No stacking at all (we'd lose a lot of real estate, maybe defensive formation expires over time)
+**** Attack formation
+When a piece has 2 or more rows of same colored basic units above it, it will consume those basics and go into attack formation. The power of the attack will be based on the HP of the unit, it's size, and how many units were consumed.
+***** Examples
+('p' represents a single piece, 'b' basic pieces, and 'a' represents a piece in attack formation)
+****** 2x2
+#+begin_example
+  b b
+  b b
+  p p
+#+end_example
+
+results in
+
+#+begin_example
+  - -
+  - -
+  a a
+#+end_example
+
+****** 1x2
+#+begin_example
+  b
+  b
+  p
+#+end_example
+
+results in
+
+#+begin_example
+  -
+  -
+  a
+#+end_example
+
+also
+
+#+begin_example
+  b
+  b
+  b
+  p
+#+end_example
+
+results in
+
+#+begin_example
+  -
+  -
+  -
+  a
+#+end_example
+
+** Chaining
+Chaining occurs when a pattern match occurs, without a player moving a piece.
+The player who has a pattern match is awarded an additional move when this occurs.
+The reward for chaining is recursive;
+I.E. if a change based on a chain causes another chain, then the player continues to be awarded additional moves.
+
+** Coordinated Attacks
+During the attack phase, if more then one piece is timed to attack on the same turn,
+a bonus is given to all units doing the attack.
+
+*** TODO Define bonus
+- Bonus should scale with the number of units attacking.
+- Bonus could be different based on colors involved.
+
+* TODO Attack phase
+* Controls
+** Move piece
+   During their turn, players can pick up a piece from the back of a column, and place it into the back of another column. Costs one move.
+** Remove piece
+   During their turn, Players can remove any piece from the board. Costs one move.
+** Use ability
+   During their turn, players can use an ability if they have enough mana.
+** Unlock upgrade
+   At any time, players can unlock an item on the upgrade tree.
+**  End turn
+
+* Upgrades
+
+** TODO [#A] Brainstorm some upgrades
+
+* Abilities
+**  Swap Anywhere
+ On this turn, allow players to move pieces normally, as well as swap pieces of the same size.
+** TODO [#A] Brainstorm some abilities

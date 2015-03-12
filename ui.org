@@ -1,0 +1,10 @@
+* TODO Diagram
+
+* TODO Main Menu
+
+* TODO Pause Menu
+
+* TODO Mutliplayer
+- Need to support match finding (just find me a game to play).
+- Should support play with friend online.
+- Should support hot-seat as well.
